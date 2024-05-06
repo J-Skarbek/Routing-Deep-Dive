@@ -17,9 +17,6 @@ export default function NewsPage() {
             </li>
           )
           )}
-          <li><Link href='/news/article1' >Article 1</Link></li>
-          <li><Link href='/news/article2' >Article 2 </Link></li>
-          <li><Link href='/news/article3' >Article 3 </Link></li>
         </ul>
       </div>
     </div>

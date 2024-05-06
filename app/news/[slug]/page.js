@@ -1,8 +1,15 @@
-import { DUMMY_NEWS } from "@/dummy-news"
+import { DUMMY_NEWS } from "@/dummy-news";
+import { notFound } from "next/navigation";
 
 export default function NewsDetailPage({ params }) {
   const newsSlug = params.slug;
-  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsSlug)
+  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsSlug);
+
+  if (!newsItem) {
+    //This provided function will cause the not-found.js page with the closest
+    //proximity to the component in the file structure
+    notFound();
+  }
 
   return (
     <article className="news-article">

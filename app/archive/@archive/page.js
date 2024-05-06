@@ -1,5 +1,13 @@
 export default function ArchivePage() {
   return (
-    <h1>Temporary Archive Page...</h1>
+    <header id="archive-header">
+      <nav>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
   )
 }

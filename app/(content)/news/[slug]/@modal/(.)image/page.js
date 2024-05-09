@@ -1,15 +1,14 @@
 import { notFound } from "next/navigation";
-import { DUMMY_NEWS } from "@/dummy-news";
 import ModalBackdrop from "@/components/modalBackdrop";
+import { getNewsItem } from "@/lib/news";
 
 //NOTE: this intercepted path will be navigated to by people who are trying to visit the path
 //While viewing another existing component in the app:
 //https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
-export default function InterceptedImagePage({ params }) {
+export default async function InterceptedImagePage({ params }) {
 
   const newsItemSlug = params.slug;
-
-  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsItemSlug);
+  const newsItem = await getNewsItem(newsItemSlug);
 
   if (!newsItem) {
     notFound();

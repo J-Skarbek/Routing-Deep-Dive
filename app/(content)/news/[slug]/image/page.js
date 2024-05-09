@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
-import { DUMMY_NEWS } from "@/dummy-news";
+import { getNewsItem } from "@/lib/news";
 
-export default function ImagePage({ params }) {
+export default async function ImagePage({ params }) {
 
   const newsItemSlug = params.slug;
   //NOTE: nested routes also have access to parent route params
-
-  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsItemSlug);
+  const newsItem =  await getNewsItem(newsItemSlug);
 
   if (!newsItem) {
     //This provided function will cause the not-found.js page with the closest

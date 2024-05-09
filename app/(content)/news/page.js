@@ -17,7 +17,7 @@ export default async function NewsPage() {
   //ABOVE IS ALL CALLING DATA VIA A SEPERATE BACKEND/DB LIKE SET UP EARLIER, BELOW
   //IS DOING THE SAME BUT PLACING THE DB FILE DIRECTLY IN THE NEXT APP
 
-  const news = getAllNews();
+  const news = await getAllNews();
    
   return (
     <div id="news">
